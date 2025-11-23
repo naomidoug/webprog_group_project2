@@ -66,7 +66,7 @@ $answers = [
 
 ];
 
-$selected = isset($_GET['q']) ? (int)$_GET['q'] : null;
+$selected = isset($_GET['q']) ? (int) $_GET['q'] : null;
 
 $currentQuestion = "";
 $feedback = "";
