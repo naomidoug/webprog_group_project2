@@ -1,7 +1,9 @@
 body{
     background-image: url("jeopardy__bg.png");    
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     
 }
 
@@ -129,4 +131,30 @@ body{
 footer{
     color: white;
     
+}
+
+.lowest-container{
+    display: flex;
+    gap: 20px;
+    margin-top: 60px;
+    margin-left: 20px;
+}
+.player-button-container{
+    width: 33%;
+    height: 100px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.player-button:hover{
+    background-color: #777;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.player-button:active{
+    background-color: red;
 }

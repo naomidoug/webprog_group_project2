@@ -17,17 +17,28 @@
     <div class ="upper-container">
         <div class="left-column">
             <div class = "face-columns">
-                <div class = "nested-column">Face Icon  here</div>
-                <div class = "nested-column">Total info here</div>          
+                <div class = "nested-column">
+                  <img src="anon-user.jpg" width="50px" height="50px">
+                </div>
+                <div class = "nested-column">
+                  <ul> 
+                    <li>Username</li>
+                    <li>Cash</li>
+                  </ul>
+                </div>          
             </div>
 
             <div class = "face-columns">
-                <div class = "nested-column">Face Icon  here</div>
+                <div class = "nested-column">
+                  <img src="anon-user.jpg" width="50px" height="50px">
+                </div>
                 <div class = "nested-column">Total info here</div>            
             </div>
 
             <div class = "face-columns">
-                <div class = "nested-column">Face Icon  here</div>
+                <div class = "nested-column">
+                  <img src="anon-user.jpg" width="50px" height="50px">
+              </div>
                 <div class = "nested-column">Total info here</div>         
             </div>
 
@@ -35,7 +46,7 @@
 
         <div class="middle-column">
             <div class="host-column">
-              <img src="AlexTrebek.jpg" width="100%" height="200">
+              <img src="AlexTrebek.jpg" width="100%" height="100%">
 
             </div>
 
@@ -92,11 +103,23 @@
 
             </div>
 
+
             <div class="question-area">
               <?= htmlspecialchars($currentQuestion) ?>
+              <?php if ($currentQuestion !== ""): ?>
+              <form method="POST" action="?q=<?= $selected ?>">
+                  What is... <br>
+                  <input type="text" name="answer" placeholder="Your answer">
+                  <button type="submit">Submit</button>
+              </form>
+            <?php endif; ?>
+
+            <div class="answer-feedback">
+                <?= $feedback ?>
             </div>
         </div>
     </div>
+              </div>
 
     <div class ="lower-container">
         <div class ="tools-container">
@@ -112,25 +135,23 @@
             <div class="tool-box">
               The user Info
             </div>
-        </div>
-
-        <div class ="answer-area">
-          <?php if ($currentQuestion !== ""): ?>
-              <form method="POST" action="?q=<?= $selected ?>">
-                  What is... <br>
-                  <input type="text" name="answer" placeholder="Your answer">
-                  <button type="submit">Submit</button>
-              </form>
-            <?php endif; ?>
-
-            <div class="answer-feedback">
-                <?= $feedback ?>
-            </div>
-
-
-        </div>
-
+          </div>
     </div>
+    <div class="lowest-container">
+          <div class="player-button-container">
+            <div class="button-username">Player 1</div>
+            <img src="redbutton.jpeg" width="100px" height="100px" class="player-button">
+          </div>
+          <div class="player-button-container">
+            Player 2
+            <img src="redbutton.jpeg"  width="100px" height="100px" class="player-button">
+          </div>
+          <div class="player-button-container">
+            Player 3
+            <img src="redbutton.jpeg"  width="100px" height="100px" class="player-button">
+          </div>
+    </div>
+
   </main>
 
   <footer>
