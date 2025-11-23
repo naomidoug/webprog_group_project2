@@ -1,0 +1,47 @@
+First Player Buzzing In with Correct Response
+Preconditions: A question is active and the buzz-in period has started.
+Steps:
+Player B is the first to click the "Buzz In" button.
+UI changes to answer screen
+Player B answers questions correctly.
+Expected Result:
+The response is evaluated as correct.
+Player B's score increases by assigned value.
+A "Correct!" message is displayed to all players.
+The game board returns, and it becomes Player B's turn to select the next question.
+
+First Player Buzzing In with Incorrect Response, Second Player Steals
+Preconditions: A question is active and the buzz-in period has started.
+Steps:
+Player A clicks "Buzz In" first.
+Player A submits an incorrect answer.
+The system marks it as incorrect.
+The buzz-in period re-opens for the remaining players.
+Player C clicks "Buzz In" and submits the correct answer.
+Expected Result:
+Player A's score remains unchanged.
+Player C's score increases by assigned value.
+
+It becomes Player C's turn to select the next question.
+No player answers within timer
+Steps:
+Timer expires without buzz
+Expected:
+No points awarded
+Move to next player’s selection turn.
+
+Turn order is maintained after an incorrect response (no steal)
+Preconditions: Player A's turn. The game has 3 players: A, B, C.
+Steps:
+Player A selects a question.
+Player A buzzes in and answers incorrectly.
+No other player buzzes in to steal.
+Expected Result
+The turn indicator updates to show it is now Player B's turn to select a question.
+
+Multiple Players Buzz In Simultaneously
+Preconditions: A question is active.
+Steps:
+Player A and Player B click the "Buzz In" button at the exact same time
+Expected Result:
+game assigns buzz-in priority to one player (the one whose request was received first). Only that player is allowed to answer
