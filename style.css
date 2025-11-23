@@ -191,3 +191,7 @@ footer{
 .player-button:active{
     background-color: red;
 }
+
+.active-player{
+    background-color: red;
+}

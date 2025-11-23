@@ -1,4 +1,19 @@
 <?php
+
+session_start(); // keep state between requests
+
+// Initialize turn on first load
+if (!isset($_SESSION['currentPlayer'])) {
+    $_SESSION['currentPlayer'] = 0; // 0 = Player 1, 1 = Player 2, 2 = Player 3
+}
+
+if (isset($_POST['next_turn'])) {
+    $_SESSION['currentPlayer'] = ($_SESSION['currentPlayer'] + 1) % 3;
+}
+
+$players = ["Player 1", "Player 2", "Player 3"];
+$currentPlayer = $_SESSION['currentPlayer'];
+
 $questions = [
     1 => "This person is known as the first computer programmer. Their work dates back to the 1840s",
     2 => "Originally, pests that got into computer parts; this now refers to an error.",
@@ -68,14 +83,21 @@ $answers = [
 
 $selected = isset($_GET['q']) ? (int) $_GET['q'] : null;
 
+if (!isset($_SESSION['currentQuestion'])){
+    $_SESSION['currentQuestion'] = '';
+}
 $currentQuestion = "";
 $feedback = "";
 
 if ($selected !== null && isset($questions[$selected])) {
     $currentQuestion = $questions[$selected];
+}
 
-    // If the user submitted an answer
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $formType = $_POST['form_type'] ?? '';
+
+    if ($formType === 'jeopardy') {
         $userAnswer = trim($_POST['answer']);
         $correct = $answers[$selected];
 
@@ -84,6 +106,17 @@ if ($selected !== null && isset($questions[$selected])) {
         } else {
             $feedback = "❌ Incorrect. The correct answer was: <strong>$correct</strong>";
         }
+
+        header("Location: index.php");
+        exit;
+    }
+
+    if ($formType === 'landing') {
+        $_SESSION['username1'] = $_POST["username1"] ?? "";
+        $_SESSION['username2'] = $_POST["username2"] ?? "";
+        $_SESSION['username3'] = $_POST["username3"] ?? "";
+        header("Location: index.php");
+        exit;
     }
 }
 ?>

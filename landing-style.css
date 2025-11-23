@@ -1,0 +1,71 @@
+html, body{
+    background-image: url("jeopardy__bg.png");    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.banner-container {
+    text-align: center;
+    color: white;
+    background: linear-gradient(to right, #777, #eee, #777);
+    background-clip: text;
+    color: transparent; 
+}
+
+.page-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-container{
+    height: 20vh;
+    width: 100%;
+}
+.bottom-container{
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-row{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+.user-container{
+    width: 200px;
+    height: 200px;
+    background: darkblue;
+    border-radius: 10px;
+    margin: 20px;
+
+}
+.usernames-container{
+    display: flex;
+    height: 50vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.username{
+    margin-top: 50%;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#submit-form{
+    display: flex;
+    align-items: center;
+    
+}
