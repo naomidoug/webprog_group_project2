@@ -42,6 +42,13 @@ body{
 
     cursor: pointer;
 }
+.cell.used {
+    background-color: black !important;
+    color: transparent !important;
+    pointer-events: none; 
+    cursor: default;
+}
+
 
 
 .upper-container {

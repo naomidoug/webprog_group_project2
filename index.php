@@ -92,44 +92,45 @@
         <div class="cell">Artificial Intelligence</div>
 
         <!-- Row 1 ($200) -->
-        <a class="cell" href="?q=1">$200</a>
-        <a class="cell" href="?q=2">$200</a>
-        <a class="cell" href="?q=3">$200</a>
-        <a class="cell" href="?q=4">$200</a>
-        <a class="cell" href="?q=5">$200</a>
-        <a class="cell" href="?q=6">$200</a>
+        <?php for ($i = 1; $i <= 6; $i++): ?>
+            <?php $isUsed = $_SESSION['used_questions'][$i] ?? false; ?>
+            <a class="cell <?= $isUsed ? 'used' : '' ?>" href="<?= $isUsed ? '#' : '?q='.$i ?>">
+                <?= $isUsed ? '' : '$200' ?>
+            </a>
+        <?php endfor; ?>
 
         <!-- Row 2 ($400) -->
-        <a class="cell" href="?q=7">$400</a>
-        <a class="cell" href="?q=8">$400</a>
-        <a class="cell" href="?q=9">$400</a>
-        <a class="cell" href="?q=10">$400</a>
-        <a class="cell" href="?q=11">$400</a>
-        <a class="cell" href="?q=12">$400</a>
+        <?php for ($i = 7; $i <= 12; $i++): ?>
+            <?php $isUsed = $_SESSION['used_questions'][$i] ?? false; ?>
+            <a class="cell <?= $isUsed ? 'used' : '' ?>" href="<?= $isUsed ? '#' : '?q='.$i ?>">
+                <?= $isUsed ? '' : '$400' ?>
+            </a>
+        <?php endfor; ?>
 
         <!-- Row 3 ($600) -->
-        <a class="cell" href="?q=13">$600</a>
-        <a class="cell" href="?q=14">$600</a>
-        <a class="cell" href="?q=15">$600</a>
-        <a class="cell" href="?q=16">$600</a>
-        <a class="cell" href="?q=17">$600</a>
-        <a class="cell" href="?q=18">$600</a>
+        <?php for ($i = 13; $i <= 18; $i++): ?>
+            <?php $isUsed = $_SESSION['used_questions'][$i] ?? false; ?>
+            <a class="cell <?= $isUsed ? 'used' : '' ?>" href="<?= $isUsed ? '#' : '?q='.$i ?>">
+                <?= $isUsed ? '' : '$600' ?>
+            </a>
+        <?php endfor; ?>
 
         <!-- Row 4 ($800) -->
-        <a class="cell" href="?q=19">$800</a>
-        <a class="cell" href="?q=20">$800</a>
-        <a class="cell" href="?q=21">$800</a>
-        <a class="cell" href="?q=22">$800</a>
-        <a class="cell" href="?q=23">$800</a>
-        <a class="cell" href="?q=24">$800</a>
+        <?php for ($i = 19; $i <= 24; $i++): ?>
+            <?php $isUsed = $_SESSION['used_questions'][$i] ?? false; ?>
+            <a class="cell <?= $isUsed ? 'used' : '' ?>" href="<?= $isUsed ? '#' : '?q='.$i ?>">
+                <?= $isUsed ? '' : '$800' ?>
+            </a>
+        <?php endfor; ?>
 
         <!-- Row 5 ($1000) -->
-        <a class="cell" href="?q=25">$1000</a>
-        <a class="cell" href="?q=26">$1000</a>
-        <a class="cell" href="?q=27">$1000</a>
-        <a class="cell" href="?q=28">$1000</a>
-        <a class="cell" href="?q=29">$1000</a>
-        <a class="cell" href="?q=30">$1000</a>
+        <?php for ($i = 25; $i <= 30; $i++): ?>
+            <?php $isUsed = $_SESSION['used_questions'][$i] ?? false; ?>
+            <a class="cell <?= $isUsed ? 'used' : '' ?>" href="<?= $isUsed ? '#' : '?q='.$i ?>">
+                <?= $isUsed ? '' : '$1000' ?>
+            </a>
+        <?php endfor; ?>
+
       </div>
 
       <div class="question-area">

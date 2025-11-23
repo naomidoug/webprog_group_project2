@@ -83,9 +83,18 @@ $answers = [
 
 $selected = isset($_GET['q']) ? (int) $_GET['q'] : null;
 
+if (!isset($_SESSION['used_questions'])) {
+    $_SESSION['used_questions'] = [];
+}
+
 if (!isset($_SESSION['currentQuestion'])){
     $_SESSION['currentQuestion'] = '';
 }
+if (isset($_GET['q'])) {
+    $selected = intval($_GET['q']);
+    $_SESSION['used_questions'][$selected] = true;
+}
+
 $currentQuestion = "";
 $feedback = "";
 
