@@ -68,15 +68,15 @@ $answers = [
     18 => "What is a DDoS attack?",
     19 => "What is SQL injection?",
     20 => "What is a zero-day exploit?",
-    21 => "What is Random Access Memory (RAM)?",
+    21 => "What is Random Access Memory?",
     22 => "What is a watt?",
     23 => "What is a CPU?",
     24 => "What is clock speed?",
     25 => "What is a hard disk drive?",
     26 => "What is machine learning?",
     27 => "What is the Turing Test?",
-    28 => "What is a convolutional neural network (CNN)?",
-    29 => "What are hallucinations (in AI)?",
+    28 => "What is a convolutional neural network?",
+    29 => "What are hallucinations?",
     30 => "What are large language models?",
 
 ];
