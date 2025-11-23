@@ -121,11 +121,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if ($formType === 'landing') {
+        $_SESSION['used_questions'] = [];
+        $_SESSION['currentPlayer']  = 0;
+        $selected = null;
+        $currentQuestion = "";
+        $feedback = "";
+
         $_SESSION['username1'] = $_POST["username1"] ?? "";
         $_SESSION['username2'] = $_POST["username2"] ?? "";
         $_SESSION['username3'] = $_POST["username3"] ?? "";
+
         header("Location: index.php");
         exit;
     }
+
 }
 ?>
