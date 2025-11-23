@@ -69,16 +69,15 @@ body{
 .face-columns {
     gap: 5px;
     margin: 2px;
-    background-color: #f0f8ff;
-    border: 1px solid #ccc;
+    background-color: rgba(128, 128, 128, 0.507);
+    border: 1px solid rgba(255, 255, 255, 0.288);
     border-radius: 8px;    
 }
 
 .nested-column {
     flex: 1;
     padding: 4%;
-    background-color: #e6e6fa;
-    border: 1px dashed #999;
+    background-color: rgba(128, 128, 128, 0.0507);
     border-radius: 6px;
     margin: 2%;
 
@@ -138,6 +137,7 @@ footer{
     gap: 20px;
     margin-top: 60px;
     margin-left: 20px;
+    padding: 10px;
 }
 .player-button-container{
     width: 33%;

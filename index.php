@@ -108,7 +108,7 @@
               <?= htmlspecialchars($currentQuestion) ?>
               <?php if ($currentQuestion !== ""): ?>
               <form method="POST" action="?q=<?= $selected ?>">
-                  What is... <br>
+                  <br>
                   <input type="text" name="answer" placeholder="Your answer">
                   <button type="submit">Submit</button>
               </form>
@@ -122,20 +122,7 @@
               </div>
 
     <div class ="lower-container">
-        <div class ="tools-container">
-            <div class="tool-box">
-              The user Info
-            </div>
-            <div class="tool-box">
-              The user Info
-            </div>
-            <div class="tool-box">
-              The user Info
-            </div>
-            <div class="tool-box">
-              The user Info
-            </div>
-          </div>
+        
     </div>
     <div class="lowest-container">
           <div class="player-button-container">
