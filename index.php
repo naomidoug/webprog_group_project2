@@ -1,4 +1,21 @@
 <?php include 'logic.php'; ?>
+<?php
+session_start(); // keep state between requests
+
+// Initialize turn on first load
+if (!isset($_SESSION['currentPlayer'])) {
+    $_SESSION['currentPlayer'] = 0; // 0 = Player 1, 1 = Player 2, 2 = Player 3
+}
+
+// If the next-turn button was pressed, advance the turn
+if (isset($_POST['next_turn'])) {
+    $_SESSION['currentPlayer'] = ($_SESSION['currentPlayer'] + 1) % 3;
+}
+
+// Just for convenience if you want to display names
+$players = ["Player 1", "Player 2", "Player 3"];
+$currentPlayer = $_SESSION['currentPlayer'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
