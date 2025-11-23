@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="settings-box">
-          Settings
+          <a href="landing.php" class="home-button">Return Home</a>
         </div>
         <div class="settings-box">
           Confirm Answer

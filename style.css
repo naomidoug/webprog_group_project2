@@ -92,6 +92,26 @@ body{
     justify-content: center;
     align-items: center;
 }
+.home-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.home-button:hover{
+    background: #0056b3;
+}
 
 .left-column, .middle-column {
     width: 50%;  
