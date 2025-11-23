@@ -35,9 +35,11 @@ session_start(); // start a fresh session
                         
                         
                     <div class="user-container">
+                        <p>Player 2 username:</p>
                         <input type="text" name="username2" class="username" placeholder="username">
                     </div>
                     <div class="user-container">
+                        <p>Player 3 username:</p>
                         <input type="text" name="username3" class="username" placeholder="username">
                     </div>
                 </div>
