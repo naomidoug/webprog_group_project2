@@ -32,11 +32,58 @@ $questions = [
     30 => "GPT models, BERT, and LLaMA are examples of this type of model trained on massive text corpora."
 ];
 
+$answers = [
+    1 => "Ada Lovelace",
+    2 => "bug",
+    3 => "Alan Turing",
+    4 => "Linux",
+    5 => "ARPANET",
+    6 => "queue",
+    7 => "array",
+    8 => "n-array",
+    9 => "adjacency list",
+    10 => "Fibonacci heap",
+    11 => "Bubble Sort",
+    12 => "merge sort",
+    13 => "quick sort",
+    14 => "in-order traversal",
+    15 => "dynamic programming",
+    16 => "ransomware",
+    17 => "availability",
+    18 => "DDoS attack",
+    19 => "SQL injection",
+    20 => "zero-day exploit",
+    21 => "Random Access Memory",
+    22 => "watts",
+    23 => "CPU",
+    24 => "clock speed",
+    25 => "hard disk drive",
+    26 => "machine learning",
+    27 => "Turing Test",
+    28 => "CNN",
+    29 => "hallucinations",
+    30 => "large language models",
+
+];
+
 $selected = isset($_GET['q']) ? (int)$_GET['q'] : null;
 
-if ($selected &&  isset($questions[$selected])){
+$currentQuestion = "";
+$feedback = "";
+
+if ($selected !== null && isset($questions[$selected])) {
     $currentQuestion = $questions[$selected];
-} else{
-    $currentQuestion = "";
+
+    // If the user submitted an answer
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $userAnswer = trim($_POST['answer']);
+        $correct = $answers[$selected];
+
+        if (strcasecmp($userAnswer, $correct) === 0) {
+            $feedback = "✔️ Correct!";
+        } else {
+            $feedback = "❌ Incorrect. The correct answer was: <strong>$correct</strong>";
+        }
+    }
 }
 ?>

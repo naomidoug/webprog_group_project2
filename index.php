@@ -93,7 +93,7 @@
             </div>
 
             <div class="question-area">
-              <?= $currentQuestion ?>
+              <?= htmlspecialchars($currentQuestion) ?>
             </div>
         </div>
     </div>
@@ -115,9 +115,18 @@
         </div>
 
         <div class ="answer-area">
-          "<p> 
-              What is.....
-          </p>
+          <?php if ($currentQuestion !== ""): ?>
+              <form method="POST" action="?q=<?= $selected ?>">
+                  What is... <br>
+                  <input type="text" name="answer" placeholder="Your answer">
+                  <button type="submit">Submit</button>
+              </form>
+            <?php endif; ?>
+
+            <div class="answer-feedback">
+                <?= $feedback ?>
+            </div>
+
 
         </div>
 
