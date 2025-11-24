@@ -23,7 +23,7 @@ if (isset($_SESSION['buzzingPlayer'])) {
     if ($buzzingPlayer === 3) $allowAnswer3 = true;
 }
 
-// new buzz this request?
+
 if (isset($_POST['buzz'])) {
     $buzzingPlayer = (int) $_POST['buzz'];
     $_SESSION['buzzingPlayer'] = $buzzingPlayer; // remember it
@@ -131,7 +131,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $formType = $_POST['form_type'] ?? '';
 
-    // 1) Landing form still uses form_type = 'landing'
     if ($formType === 'landing') {
         $_SESSION['used_questions'] = [];
         $_SESSION['currentPlayer']  = 0;
@@ -147,21 +146,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    // 2) Buzz from any player
     if (isset($_POST['buzz'])) {
-        $buzzingPlayer = (int) $_POST['buzz']; // 1,2,3
+        $buzzingPlayer = (int) $_POST['buzz'];
         $_SESSION['buzzingPlayer'] = $buzzingPlayer;
 
-        // just reload page so the correct input becomes enabled
+        
         header("Location: index.php" . (isset($_GET['q']) ? '?q='.(int)$_GET['q'] : ''));
         exit;
     }
 
-    // 3) Answer submission from a player
     if (isset($_POST['submitAnswer'])) {
         $userAnswer = trim($_POST['answer'] ?? '');
 
-        // selected question is still taken from ?q=... in URL
+        
         $selected = isset($_GET['q']) ? (int) $_GET['q'] : null;
 
         if ($selected !== null && isset($answers[$selected])) {
@@ -169,16 +166,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if (strcasecmp($userAnswer, $correct) === 0) {
                 $_SESSION['feedback'] = "✔️ Correct!";
-                // correct – usually you’d keep same currentPlayer
+                
             } else {
-                // wrong: advance turn
+                
                 $_SESSION['currentPlayer'] = ($_SESSION['currentPlayer'] + 1) % 3;
                 $_SESSION['feedback'] = "❌ Incorrect. The correct answer was: <strong>$correct</strong>";
                 unset($_SESSION['buzzingPlayer']);
             }
         }
-
-        // in either case, disable all answer boxes for next question
         
 
         header("Location: index.php" . (isset($_GET['q']) ? '?q='.(int)$_GET['q'] : ''));

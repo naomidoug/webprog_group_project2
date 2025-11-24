@@ -195,7 +195,7 @@ footer{
 .lowest-container{
     display: flex;
     gap: 20px;
-    margin-top: 60px;
+    margin-top: 70px;
     margin-left: 20px;
     padding: 10px;
 }
@@ -237,7 +237,9 @@ footer{
 .active-player{
     background-color: red;
 }
-
+.button-username{
+    color: white;
+}
 #footer {
   position: fixed;
   bottom: 10px;
