@@ -14,6 +14,7 @@ html, body{
     background: linear-gradient(to right, #777, #eee, #777);
     background-clip: text;
     color: transparent; 
+    font-size: 40pt;
 }
 
 .page-container{
@@ -22,6 +23,9 @@ html, body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    text-align: center;
+    
 }
 
 .top-container{
@@ -48,6 +52,8 @@ html, body{
     background: darkblue;
     border-radius: 10px;
     margin: 20px;
+    font-size: 15pt;
+    
 
 }
 .usernames-container{
