@@ -1,4 +1,8 @@
-<?php include 'logic.php'; ?>
+<?php include 'logic.php'; 
+  $feedback = $_SESSION['feedback'] ?? '';
+  unset($_SESSION['feedback']);
+
+?>
 
 
 
@@ -148,6 +152,7 @@
             <?= $feedback ?>
           </div>
         </div>
+<<<<<<< HEAD
       </div> <!-- .right-column -->
 
     </div> <!-- .upper-container -->
@@ -159,14 +164,43 @@
       <div class="player-button-container">
         <div class="button-username">Player 1</div>
         <img src="redbutton.jpeg" width="100px" height="100px" class="player-button">
+=======
+        <div class="settings-box">
+          <a href="landing.php" class="home-button">Return Home</a>
+        </div>
+        <div class="settings-box">
+          Confirm Answer
+        </div>
+>>>>>>> 85749e7cfb9b703c36d408f6d1d61e7de0204bde
       </div>
       <div class="player-button-container">
         Player 2
         <img src="redbutton.jpeg" width="100px" height="100px" class="player-button">
       </div>
+<<<<<<< HEAD
       <div class="player-button-container">
         Player 3
         <img src="redbutton.jpeg" width="100px" height="100px" class="player-button">
+=======
+
+      <div class="question-area">
+        <?= htmlspecialchars($currentQuestion) ?>
+        <?php if ($currentQuestion !== ""): ?>
+          <form method="POST" action="?q=<?= $selected ?>">
+            <br>
+            <input type="hidden" name="form_type" value="jeopardy">
+            <input type="text" name="answer" placeholder="Your answer">
+            <button type="submit">Submit</button>
+          </form>
+        <?php endif; ?>
+
+        <div class="answer-feedback">
+          <?php if (!empty($feedback)) : ?>
+            <div class="feedback"><?= $feedback ?></div>
+          <?php endif; ?>
+
+        </div>
+>>>>>>> 85749e7cfb9b703c36d408f6d1d61e7de0204bde
       </div>
     </div>
   </main>
