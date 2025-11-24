@@ -34,7 +34,7 @@
               </div>
               <div class="player-info">
                 <p><?= $_SESSION['username1'] ?? '' ?></p>
-                <p>Cash: </p>
+                <p>Cash: $<?= $_SESSION['cash'][0] ?? 0 ?></p>
               </div>
             </div>
 
@@ -44,7 +44,7 @@
               </div>
               <div class="player-info">
                 <p><?= $_SESSION['username2'] ?? '' ?></p>
-                <p>Cash: </p>
+                <p>Cash: $<?= $_SESSION['cash'][1] ?? 0 ?></p>
               </div>
             </div>
 
@@ -54,7 +54,7 @@
               </div>
               <div class="player-info">
                 <p><?= $_SESSION['username3'] ?? '' ?></p>
-                <p>Cash: </p>
+                <p>Cash: $<?= $_SESSION['cash'][2] ?? 0 ?></p>
               </div>
             </div>
           </div>

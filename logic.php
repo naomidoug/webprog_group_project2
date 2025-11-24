@@ -38,7 +38,9 @@ if (isset($_POST['buzz'])) {
 
 $players = ["Player 1", "Player 2", "Player 3"];
 $currentPlayer = $_SESSION['currentPlayer'];
-
+if (!isset($_SESSION['cash'])) {
+    $_SESSION['cash'] = [0, 0, 0]; // Player 1, Player 2, Player 3
+}
 $questions = [
     1 => "This person is known as the first computer programmer. Their work dates back to the 1840s",
     2 => "Originally, pests that got into computer parts; this now refers to an error.",
@@ -105,7 +107,43 @@ $answers = [
     30 => "What are large language models?",
 
 ];
-
+$questionValues = [
+    // Row 1
+    1 => 200,
+    2 => 200,
+    3 => 200,
+    4 => 200,
+    5 => 200,
+    6 => 200,
+    // Row 2
+    7 => 400,
+    8 => 400,
+    9 => 400,
+    10 => 400,
+    11 => 400,
+    12 => 400,
+    // Row 3
+    13 => 600,
+    14 => 600,
+    15 => 600,
+    16 => 600,
+    17 => 600,
+    18 => 600,
+    // Row 4
+    19 => 800,
+    20 => 800,
+    21 => 800,
+    22 => 800,
+    23 => 800,
+    24 => 800,
+    // Row 5
+    25 => 1000,
+    26 => 1000,
+    27 => 1000,
+    28 => 1000,
+    29 => 1000,
+    30 => 1000,
+];
 $selected = isset($_GET['q']) ? (int) $_GET['q'] : null;
 
 if (!isset($_SESSION['used_questions'])) {
@@ -166,9 +204,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if (strcasecmp($userAnswer, $correct) === 0) {
                 $_SESSION['feedback'] = "✔️ Correct!";
-                
+                // Add cash to current player
+                $value = $questionValues[$selected] ?? 0;
+                $_SESSION['cash'][$_SESSION['currentPlayer']] += $value;
             } else {
-                
+                $value = $questionValues[$selected] ?? 0;
+                $_SESSION['cash'][$_SESSION['currentPlayer']] -= $value;
                 $_SESSION['currentPlayer'] = ($_SESSION['currentPlayer'] + 1) % 3;
                 $_SESSION['feedback'] = "❌ Incorrect. The correct answer was: <strong>$correct</strong>";
                 unset($_SESSION['buzzingPlayer']);
