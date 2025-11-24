@@ -13,6 +13,7 @@ body{
     background: linear-gradient(to right, #777, #eee, #777);
     background-clip: text;
     color: transparent; 
+    font-size: 30pt;
 }
 
 .matrix{
@@ -69,7 +70,6 @@ body{
     display: flex;
     gap: 20px;
     height: 79%;
-    margin-left: 1%;
 }
 
 .settings-container{
@@ -128,11 +128,12 @@ body{
 
 .player-column {
     gap: 5px;
-    margin-bottom: 6px;
+    margin-bottom: 13px;
     background-color: rgba(128, 128, 128, 0.507);
     border: 1px solid rgba(255, 255, 255, 0.288);
     border-radius: 8px;
     height: 140px;    
+
 }
 
 .player-image{    
