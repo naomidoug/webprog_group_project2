@@ -111,14 +111,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $correct = $answers[$selected];
 
         if (strcasecmp($userAnswer, $correct) === 0) {
-            $feedback = "✔️ Correct!";
+            $_SESSION['feedback'] = "✔️ Correct!";
         } else {
-            $feedback = "❌ Incorrect. The correct answer was: <strong>$correct</strong>";
+            $_SESSION['feedback'] = "❌ Incorrect. The correct answer was: <strong>$correct</strong>";
         }
 
+        $_SESSION['currentPlayer'] = ($_SESSION['currentPlayer'] + 1) % 3;
         header("Location: index.php");
-        exit;
-    }
+    exit;
+}
+
 
     if ($formType === 'landing') {
         $_SESSION['used_questions'] = [];

@@ -1,4 +1,8 @@
-<?php include 'logic.php'; ?>
+<?php include 'logic.php'; 
+  $feedback = $_SESSION['feedback'] ?? '';
+  unset($_SESSION['feedback']);
+
+?>
 
 
 
@@ -145,7 +149,10 @@
         <?php endif; ?>
 
         <div class="answer-feedback">
-          <?= $feedback ?>
+          <?php if (!empty($feedback)) : ?>
+            <div class="feedback"><?= $feedback ?></div>
+          <?php endif; ?>
+
         </div>
       </div>
     </div> <!-- .right-column -->
