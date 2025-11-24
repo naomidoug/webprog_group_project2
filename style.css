@@ -199,10 +199,18 @@ footer{
     margin-left: 20px;
     padding: 10px;
 }
+.lowest-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
 .player-button-container{
     width: 33%;
     height: 100px;
-    color: white;
+    color: rgb(43, 28, 185);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,12 +219,19 @@ footer{
     
 }
 
+.player-button{
+    background: blue;
+    cursor: pointer;
+}
 .player-button:hover{
-    background-color: #777;
+    background-color: red;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 .player-button:active{
     background-color: red;
+}
+.player-button img{
+    display: block;
 }
 
 .active-player{

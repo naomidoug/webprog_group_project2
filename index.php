@@ -77,10 +77,10 @@
             </div>
           </div>
           <div class="settings-box">
-            <a href="landing.php" class="home-button">Return Home</a>
+            Settings
           </div>
           <div class="settings-box">
-            Confirm Answer
+            <a href="landing.php" class="home-button">Return Home</a>
           </div>
         </div>
 
@@ -139,14 +139,7 @@
 
         <div class="question-area">
           <?= htmlspecialchars($currentQuestion) ?>
-          <?php if ($currentQuestion !== ""): ?>
-            <form method="POST" action="?q=<?= $selected ?>">
-              <br>
-              <input type="hidden" name="form_type" value="jeopardy">
-              <input type="text" name="answer" placeholder="Your answer">
-              <button type="submit">Submit</button>
-            </form>
-          <?php endif; ?>
+          
 
           <div class="answer-feedback">
             <?= $feedback ?>
@@ -160,19 +153,57 @@
     </div>
 
     <div class="lowest-container">
-      <div class="player-button-container">
-        <div class="button-username">Player 1</div>
-        <img src="redbutton.jpeg" width="100px" height="100px" class="player-button">
-      </div>
-      <div class="player-button-container">
-        Player 2
-        <img src="redbutton.jpeg" width="100px" height="100px" class="player-button">
-      </div>
-      <div class="player-button-container">
-        Player 3
-        <img src="redbutton.jpeg" width="100px" height="100px" class="player-button">
-      </div>
-    </div>
+
+  <div class="player-button-container">
+    <form method="POST">
+      <div class="button-username">Player 1</div>
+
+      <button type="submit" name="buzz" value="1" class="player-button">
+        <img src="redbutton.jpeg" width="100" height="100">
+      </button>
+
+      <input type="text" name="answer"
+             placeholder="Your answer"
+             <?php if (!$allowAnswer1) echo "disabled"; ?>>
+
+      <button type="submit" name="submitAnswer" value="1">Submit</button>
+    </form>
+  </div>
+
+  <div class="player-button-container">
+    <form method="POST">
+      <div class="button-username">Player 2</div>
+
+      <button type="submit" name="buzz" value="2" class="player-button">
+        <img src="redbutton.jpeg" width="100" height="100">
+      </button>
+
+      <input type="text" name="answer"
+             placeholder="Your answer"
+             <?php if (!$allowAnswer2) echo "disabled"; ?>>
+
+      <button type="submit" name="submitAnswer" value="2">Submit</button>
+    </form>
+  </div>
+
+  <div class="player-button-container">
+    <form method="POST">
+      <div class="button-username">Player 3</div>
+
+      <button type="submit" name="buzz" value="3" class="player-button">
+        <img src="redbutton.jpeg" width="100" height="100">
+      </button>
+
+      <input type="text" name="answer"
+             placeholder="Your answer"
+             <?php if (!$allowAnswer3) echo "disabled"; ?>>
+
+      <button type="submit" name="submitAnswer" value="3">Submit</button>
+    </form>
+  </div>
+
+</div> <!-- .lowest-container -->
+
   </main>
 
   <div id="footer">
